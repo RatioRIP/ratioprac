@@ -1,0 +1,36 @@
+plugins {
+  id 'java'
+  id 'kr.entree.spigradle' version '2.2.3'
+  id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+
+group = 'top.retarders'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compileOnly spigot('1.8.8')
+  implementation 'org.mongodb:mongodb-driver-sync:4.2.3'
+  implementation 'org.spongepowered:configurate-hocon:4.0.0'
+  implementation 'com.hubspot.jinjava:jinjava:2.5.7'
+}
+
+spigot {
+  name = 'Inertia'
+  authors = ['pcrunn']
+  description =
+          'The vis insita, or innate force of matter, is a power of resisting by which every body, as much as in it lies, endeavours to preserve its present state, whether it be of rest or of moving uniformly forward in a straight line'
+}
+
+shadowJar {
+  classifier = ''
+}
+
+tasks.build.dependsOn(shadowJar)
+tasks.prepareSpigotPlugins.dependsOn(shadowJar)

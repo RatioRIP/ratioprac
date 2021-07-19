@@ -1,0 +1,12 @@
+&7&m---------------------------------
+{% if state == "LOBBY" %]
+    &e&lOnline: &f{{online}}
+    &e&lPlaying: &f{{playing}}
+{% elif state == "QUEUE" %}
+    &eIn Queue for &b&l {{kit}}
+{% elif state == "PLAYING" %}
+    &eFighting {{opponent.getName()}}
+{% elif state == "SPECTATING" %}
+    &eWatching &b{{match.player1}} &evs &b{{match.player2}}
+{% endif %}
+&7&m---------------------------------
