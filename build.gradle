@@ -4,14 +4,15 @@ plugins {
   id 'com.github.johnrengelman.shadow' version '6.1.0'
 }
 
-group = 'top.retarders'
-version = '1.0-SNAPSHOT'
+group = 'rip.ratio'
+version = '1.0'
 
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
 repositories {
   mavenCentral()
+  maven { url 'https://jitpack.io' }
 }
 
 dependencies {
@@ -19,11 +20,13 @@ dependencies {
   implementation 'org.mongodb:mongodb-driver-sync:4.2.3'
   implementation 'org.spongepowered:configurate-hocon:4.0.0'
   implementation 'com.hubspot.jinjava:jinjava:2.5.7'
+  implementation 'com.github.vaperion.blade:bukkit:3.0.5'
+  implementation 'com.github.ThatKawaiiSam:Assemble:master-SNAPSHOT'
 }
 
 spigot {
-  name = 'Inertia'
-  authors = ['pcrunn']
+  name = 'Practice'
+  authors = ['pcrunn', 'billdims']
   description =
           'The vis insita, or innate force of matter, is a power of resisting by which every body, as much as in it lies, endeavours to preserve its present state, whether it be of rest or of moving uniformly forward in a straight line'
 }
