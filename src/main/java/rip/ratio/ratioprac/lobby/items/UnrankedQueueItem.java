@@ -16,19 +16,10 @@ public class UnrankedQueueItem implements LobbyItem {
 
   public UnrankedQueueItem() {
     // initialize item for caching purposes
-    this.item = new ItemStack(Material.STONE_SWORD);
+    this.item = new ItemStack(Material.IRON_SWORD);
 
     ItemMeta itemMeta = this.item.getItemMeta();
-    itemMeta.setDisplayName(ChatColor.YELLOW + "Unranked Queue");
-    itemMeta.setLore(Arrays.asList(
-        ChatColor.GRAY
-            + "Right click to open the "
-            + ChatColor.WHITE
-            + "Unranked Queue"
-            + ChatColor.GRAY
-            + " menu"
-    ));
-
+    itemMeta.setDisplayName(ChatColor.WHITE + "Unranked Queue");
     this.item.setItemMeta(itemMeta);
   }
 
@@ -40,7 +31,7 @@ public class UnrankedQueueItem implements LobbyItem {
 
   @Override
   public int getSlot() {
-    return 0;
+    return 1;
   }
 
   @Override
@@ -51,13 +42,6 @@ public class UnrankedQueueItem implements LobbyItem {
   @Override
   public void onInteract(Player player, Action action) {
     if (action == Action.RIGHT_CLICK_AIR || action == Action.RIGHT_CLICK_BLOCK) {
-      player.sendMessage(ChatColor.YELLOW
-          + "Opening "
-          + ChatColor.WHITE
-          + "Unranked Queue"
-          + ChatColor.YELLOW
-          + " menu");
-
       player.openInventory(UnrankedQueueMenu.instance.getInventory());
     }
   }

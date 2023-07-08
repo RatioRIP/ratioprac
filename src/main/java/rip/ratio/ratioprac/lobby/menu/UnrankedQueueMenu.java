@@ -6,6 +6,7 @@ import org.bukkit.Material;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import rip.ratio.ratioprac.menu.Menu;
 
 public class UnrankedQueueMenu implements Menu {
@@ -22,7 +23,7 @@ public class UnrankedQueueMenu implements Menu {
 
   @Override
   public void init() {
-    this.inventory = Bukkit.createInventory(null, 2 * 9, "Unranked Queues");
+    this.inventory = Bukkit.createInventory(null, 2 * 9, "Unranked Queue");
   }
 
   @Override
@@ -39,7 +40,7 @@ public class UnrankedQueueMenu implements Menu {
   @Override
   public void onClick(InventoryClickEvent event) {
     if (event.getCurrentItem().getType() == Material.GOLD_AXE) {
-      event.getWhoClicked().sendMessage(ChatColor.YELLOW + "Feelin good.");
+      event.getWhoClicked().sendMessage(ChatColor.DARK_AQUA + "You have joined the" + ChatColor.WHITE + " Unranked Queue");
     }
   }
 

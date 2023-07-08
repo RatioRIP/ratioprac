@@ -3,6 +3,8 @@ package rip.ratio.ratioprac;
 import java.util.Arrays;
 import java.util.Collection;
 
+import rip.ratio.ratioprac.lobby.items.RankedQueueItem;
+import rip.ratio.ratioprac.lobby.menu.RankedQueueMenu;
 import rip.ratio.ratioprac.player.repository.PracticePlayerRepository;
 import rip.ratio.ratioprac.duel.preferences.DuelRequestsPreference;
 import rip.ratio.ratioprac.lobby.item.LobbyItem;
@@ -23,14 +25,16 @@ public class Fucking {
    * Lobby Items
    */
   public static final Collection<LobbyItem> lobbyItems = Arrays.asList(
-      new UnrankedQueueItem()
+      new UnrankedQueueItem(),
+      new RankedQueueItem()
   );
 
   /**
    * Menus
    */
   public static final Collection<Menu> menus = Arrays.asList(
-      new UnrankedQueueMenu()
+      new UnrankedQueueMenu(),
+      new RankedQueueMenu()
   );
 
   /**
